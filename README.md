@@ -12,6 +12,10 @@
 
 [- Supabase](https://supabase.com/)
 
+## Image:
+
+<p align="center"><img src="./public/img/imgReadme.png?raw=true" width="400">
+
 ---
 
 ⌨️ with ❤️ by [Davina](https://www.linkedin.com/in/davinamedina/) 😊

@@ -106,7 +106,7 @@ const Home: FC = () => {
           .filter(({ done }) => done)
           .map(({ id, message }) => (
             <li
-              key={id + "j"}
+              key={id}
               className={cx(styles.item, styles.done)}
               onClick={() => handleDone(id)}
             >

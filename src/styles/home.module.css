@@ -1,0 +1,29 @@
+.main {
+  display: flex;
+  justify-content: center;
+
+  min-height: 100vh;
+  background-color: rgb(169, 202, 241);
+  padding-top: 3rem;
+}
+
+.item {
+  @apply py-3 border border-t-0 border-gray-700;
+}
+
+.item:first-child {
+  @apply border-t rounded-t;
+}
+
+.item:last-child {
+  @apply rounded-b;
+}
+
+.item.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.imgCat {
+  opacity: 0.5;
+}

@@ -1,9 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
 import cx from "classNames";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
-
-let myuuid = uuidv4();
+import { createClient } from "@supabase/supabase-js";
 
 interface TodoItem {
   id: string;
@@ -12,15 +11,27 @@ interface TodoItem {
 }
 
 const Home: FC = () => {
+  let myuuid = uuidv4();
+
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY!;
+  const supabase = createClient(supabaseUrl, supabaseKey);
+
   const [message, setMessage] = useState<string>("");
   const [todoItem, setTodoItem] = useState<TodoItem[]>([]);
-  const [items, setItems] = useState<TodoItem[]>([
-    {
-      id: "123",
-      message: "Buy Milk",
-      done: true,
-    },
-  ]);
+  const [items, setItems] = useState<TodoItem[]>([]);
+  const [count, setCount] = useState<number>(0);
+
+  async function getAllTodos() {
+    const { data, error } = await supabase.from("todos").select("*");
+    setItems(data!);
+  }
+  console.log(items);
+
+  useEffect(() => {
+    getAllTodos();
+  }, []);
+
   const handleEnter = (event: { key: string }) => {
     if (event.key === "Enter") {
       handleAdd();
@@ -59,7 +70,10 @@ const Home: FC = () => {
   return (
     <div>
       <div className="pt-12">
-        <h6 className="mb-2 text-xs font-bold uppercase">Learning Next.js</h6>
+        <button onClick={() => setCount(count + 1)}> 💖: {count} </button>
+        <h6 className="mb-2 text-xs font-bold uppercase">
+          Learning Next.js{" "}
+        </h6>{" "}
         <div className="flex">
           <h1 className="text-4xl mt-3">Todo App</h1>
           <img

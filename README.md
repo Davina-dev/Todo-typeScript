@@ -8,11 +8,12 @@
 
 [-Tailwind](https://tailwindcss.com/)
 
-## Next Step:
+# Next Step:
 
 [- Supabase](https://supabase.com/)
 
-## Image:
+# Image:
+
 
 <p align="center"><img src="./public/img/imgReadme.png?raw=true" width="400">
 

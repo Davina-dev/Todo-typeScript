@@ -8,9 +8,11 @@
 
 [-Tailwind](https://tailwindcss.com/)
 
-# Next Step:
-
 [- Supabase](https://supabase.com/)
+
+
+
+
 
 # Image:
 

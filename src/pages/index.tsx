@@ -70,10 +70,7 @@ const Home: FC = () => {
   return (
     <div>
       <div className="pt-12">
-        <button onClick={() => setCount(count + 1)}> 💖: {count} </button>
-        <h6 className="mb-2 text-xs font-bold uppercase">
-          Learning Next.js{" "}
-        </h6>{" "}
+        <h6 className="mb-2 text-xs font-bold uppercase">Learning Next.js </h6>{" "}
         <div className="flex">
           <h1 className="text-4xl mt-3">Todo App</h1>
           <img
@@ -83,6 +80,13 @@ const Home: FC = () => {
             }
             alt="cat list"
           />
+          <button
+            className="flex opacity-75"
+            onClick={() => setCount(count + 1)}
+          >
+            {" "}
+            💖 <p className="text-xs text-cyan-600 font-bold"> {count} </p>
+          </button>
         </div>
       </div>
 

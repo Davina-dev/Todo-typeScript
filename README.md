@@ -14,8 +14,7 @@
 
 # Image:
 
-
-<p align="center"><img src="./public/img/imgReadme.png?raw=true" width="400">
+<p align="center"><img src="./public/img/imgReadme1.png?raw=true" width="400">
 
 ---
 

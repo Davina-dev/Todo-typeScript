@@ -113,10 +113,24 @@ const Home: FC = () => {
           .map(({ id, message }) => (
             <li
               key={id}
-              className={cx(styles.item)}
+              className={cx(styles.item, "flex")}
               onClick={() => handleDone(id)}
             >
-              {"🌒  " + message}
+              <section className="flex-1  justify-start ml-3">
+                {" "}
+                {"- " + message}{" "}
+              </section>
+              <section className="flex-none ">
+                <button>
+                  <img
+                    className="w-8 ml-3 p-1 mr-3 justify-center bg-white  rounded-lg"
+                    src={
+                      "https://media3.giphy.com/media/H9iBUt1bPrsfWBUeLQ/200w.webp?cid=790b7611m8lxj3xcl0zyrqljdo10bitkx1hvmvhtktgwcyoc&rid=10w.webp&ct=s"
+                    }
+                    alt=""
+                  />
+                </button>
+              </section>
             </li>
           ))}
 
@@ -137,3 +151,28 @@ const Home: FC = () => {
 };
 
 export default Home;
+
+/* import { FC, PropsWithChildren, useState } from "react";
+import cx from "classNames";
+
+interface TodoItem {
+  id: string;
+  message: string;
+  done: boolean;
+}
+
+
+interface HomeProps extends PropsWithChildren{
+  name: string
+  
+}
+
+
+const Home: FC<HomeProps> = ({name, children}) => {
+  const [message, setMessage] = useState<string>("");
+  const [todoItem, setTodoItem] = useState<TodoItem[]>([]);
+  const [items, setItems] = useState<TodoItem[]>([  {
+    id: "123",
+    message: "Buy Milk",
+    done: true,
+  },]); */
